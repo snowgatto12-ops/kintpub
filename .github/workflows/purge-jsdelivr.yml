@@ -1,0 +1,20 @@
+name: Purge jsDelivr Cache
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - "test.js"
+      - "test_v2.js"
+      - ".github/workflows/purge-jsdelivr.yml"
+
+jobs:
+  purge:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Purge test.js on jsDelivr
+        run: curl -fsSL "https://purge.jsdelivr.net/gh/snowgatto12-ops/kintpub@main/test.js"
+
+      - name: Purge test_v2.js on jsDelivr
+        run: curl -fsSL "https://purge.jsdelivr.net/gh/snowgatto12-ops/kintpub@main/test_v2.js"
