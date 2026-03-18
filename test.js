@@ -1,12 +1,14 @@
 (function () {
   'use strict';
 
-  const EVENT_TYPES = ['app.record.index.show'];
+  const EVENT_TYPES = ['app.record.index.show', 'mobile.app.record.index.show'];
   const COUNT_ELEMENT_ID = 'kintone-record-count-badge';
 
   kintone.events.on(EVENT_TYPES, async (event) => {
-    const headerSpace = kintone.app.getHeaderSpaceElement();
-    const appId = kintone.app.getId();
+    const isMobile = event.type.indexOf('mobile.') === 0;
+    const appApi = isMobile ? kintone.mobile.app : kintone.app;
+    const headerSpace = appApi.getHeaderSpaceElement();
+    const appId = appApi.getId();
 
     if (!headerSpace || !appId) {
       return event;
@@ -25,7 +27,7 @@
       countElement.style.background = '#0b3d91';
       countElement.style.color = '#ffffff';
       countElement.style.fontWeight = '700';
-      countElement.style.fontSize = '13px';
+      countElement.style.fontSize = isMobile ? '12px' : '13px';
       headerSpace.appendChild(countElement);
     }
 
