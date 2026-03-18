@@ -4,8 +4,8 @@
   var repo = 'snowgatto12-ops/kintpub';
   var branch = 'main';
   var targetFile = 'test_v2.js';
-  var commitApi = 'https://api.github.com/repos/' + repo + '/commits/' + branch;
-  var fallbackUrl = 'https://cdn.jsdelivr.net/gh/' + repo + '@' + branch + '/' + targetFile;
+  var commitApi =
+    'https://api.github.com/repos/' + repo + '/commits/' + branch + '?t=' + Date.now();
 
   function loadScript(url) {
     var script = document.createElement('script');
@@ -26,10 +26,21 @@
       if (!sha) {
         throw new Error('Commit SHA not found');
       }
-      var latestUrl = 'https://cdn.jsdelivr.net/gh/' + repo + '@' + sha + '/' + targetFile;
+      var latestUrl =
+        'https://raw.githubusercontent.com/' + repo + '/' + sha + '/' + targetFile + '?v=' + sha;
       loadScript(latestUrl);
     })
-    .catch(function () {
-      loadScript(fallbackUrl);
+    .catch(function (error) {
+      console.error('kintpub loader failed to resolve latest commit:', error);
+      var branchUrl =
+        'https://raw.githubusercontent.com/' +
+        repo +
+        '/' +
+        branch +
+        '/' +
+        targetFile +
+        '?v=' +
+        Date.now();
+      loadScript(branchUrl);
     });
 })();
