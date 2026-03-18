@@ -1,4 +1,4 @@
-kintoneはURL入れる
+タブレットからファイルアップできないのでjsははURL入れる
 https://cdn.jsdelivr.net/gh/snowgatto12-ops/kintpub@main/loader.js
 
 loaderは触らず、loaderに書かれたファイルを編集して開発
