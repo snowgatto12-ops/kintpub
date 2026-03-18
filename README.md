@@ -1,0 +1,2 @@
+kintoneはURL入れる
+loaderに使用ファイル書いて表示させる
