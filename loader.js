@@ -3,7 +3,7 @@
 
   var repo = 'snowgatto12-ops/kintpub';
   var branch = 'main';
-  var targetFile = 'test.js';
+  var targetFile = 'test_v2.js';
   var commitApi = 'https://api.github.com/repos/' + repo + '/commits/' + branch;
   var fallbackUrl = 'https://cdn.jsdelivr.net/gh/' + repo + '@' + branch + '/' + targetFile;
 
