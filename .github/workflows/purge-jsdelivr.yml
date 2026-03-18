@@ -5,6 +5,7 @@ on:
     branches:
       - main
     paths:
+      - "loader.js"
       - "test.js"
       - "test_v2.js"
       - ".github/workflows/purge-jsdelivr.yml"
@@ -13,6 +14,9 @@ jobs:
   purge:
     runs-on: ubuntu-latest
     steps:
+      - name: Purge loader.js on jsDelivr
+        run: curl -fsSL "https://purge.jsdelivr.net/gh/snowgatto12-ops/kintpub@main/loader.js"
+
       - name: Purge test.js on jsDelivr
         run: curl -fsSL "https://purge.jsdelivr.net/gh/snowgatto12-ops/kintpub@main/test.js"
 
