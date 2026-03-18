@@ -3,7 +3,7 @@
 
   const EVENT_TYPES = ['app.record.index.show', 'mobile.app.record.index.show'];
   const COUNT_ELEMENT_ID = 'kintone-record-count-badge-v2';
-  const LABEL = 'git v2';
+  const LABEL = 'git v3';
 
   kintone.events.on(EVENT_TYPES, async (event) => {
     const isMobile = event.type.indexOf('mobile.') === 0;
@@ -25,7 +25,7 @@
       countElement.style.margin = '8px 0';
       countElement.style.padding = '6px 12px';
       countElement.style.borderRadius = '999px';
-      countElement.style.background = '#0b3d91';
+      countElement.style.background = '#d97706';
       countElement.style.color = '#ffffff';
       countElement.style.fontWeight = '700';
       countElement.style.fontSize = isMobile ? '12px' : '13px';
