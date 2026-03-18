@@ -3,7 +3,7 @@
 
   const EVENT_TYPES = ['app.record.index.show', 'mobile.app.record.index.show'];
   const COUNT_ELEMENT_ID = 'kintone-record-count-badge-v2';
-  const LABEL = 'git v3';
+  const LABEL = 'git v3333333333333333';
 
   kintone.events.on(EVENT_TYPES, async (event) => {
     const isMobile = event.type.indexOf('mobile.') === 0;
