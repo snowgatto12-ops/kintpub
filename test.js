@@ -24,14 +24,14 @@
       countElement.style.margin = '8px 0';
       countElement.style.padding = '6px 12px';
       countElement.style.borderRadius = '999px';
-      countElement.style.background = '#1d4ed8';
+      countElement.style.background = '#be123c';
       countElement.style.color = '#ffffff';
       countElement.style.fontWeight = '700';
       countElement.style.fontSize = isMobile ? '12px' : '13px';
       headerSpace.appendChild(countElement);
     }
 
-    countElement.textContent = 'gggggggggit 総件数: 取得中...';
+    countElement.textContent = 'gggggggggit2 総件数: 取得中...';
 
     try {
       const params = {
@@ -47,11 +47,11 @@
       );
 
       const totalCount = Number(response.totalCount || 0).toLocaleString('ja-JP');
-      countElement.textContent = `gggggggggit 総件数: ${totalCount} 件`;
+      countElement.textContent = `gggggggggit2 総件数: ${totalCount} 件`;
     } catch (error) {
       console.error('レコード総数の取得に失敗しました。', error);
       countElement.style.background = '#8b0000';
-      countElement.textContent = 'gggggggggit 総件数: 取得に失敗しました';
+      countElement.textContent = 'gggggggggit2 総件数: 取得に失敗しました';
     }
 
     return event;
