@@ -31,7 +31,7 @@
       headerSpace.appendChild(countElement);
     }
 
-    countElement.textContent = 'gggggggggit2 総件数: 取得中...';
+    countElement.textContent = 'gggggggggit2222222 総件数: 取得中...';
 
     try {
       const params = {
@@ -47,11 +47,11 @@
       );
 
       const totalCount = Number(response.totalCount || 0).toLocaleString('ja-JP');
-      countElement.textContent = `gggggggggit2 総件数: ${totalCount} 件`;
+      countElement.textContent = `gggggggggit2222222 総件数: ${totalCount} 件`;
     } catch (error) {
       console.error('レコード総数の取得に失敗しました。', error);
       countElement.style.background = '#8b0000';
-      countElement.textContent = 'gggggggggit2 総件数: 取得に失敗しました';
+      countElement.textContent = 'gggggggggit2222222 総件数: 取得に失敗しました';
     }
 
     return event;
