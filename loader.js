@@ -3,7 +3,7 @@
 
   var repo = 'snowgatto12-ops/kintpub';
   var branch = 'main';
-  var targetFile = 'test_v2.js';
+  var targetFile = 'test.js';
   var commitApi =
     'https://api.github.com/repos/' + repo + '/commits/' + branch + '?t=' + Date.now();
 
