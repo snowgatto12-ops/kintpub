@@ -1,5 +1,7 @@
-(function () {
+(function () 
   'use strict';
+
+  alert('動いてる');
 
   var repo = 'snowgatto12-ops/kintpub';
   var branch = 'main';
